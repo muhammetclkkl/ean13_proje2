@@ -1,0 +1,32 @@
+EAN13 Barkod Okuyucu - Kutuphane Kurulumu (Linux / Armbian)
+=============================================================
+
+Bu proje iki kutuphaneye ihtiyac duyar: OpenCV ve zxing-cpp.
+
+1) Temel araclari kur:
+
+   sudo apt update
+   sudo apt install build-essential cmake git libopencv-dev
+
+2) zxing-cpp'yi kaynaktan derle (apt deposunda hazir paket yok):
+
+   cd ~
+   git clone https://github.com/zxing-cpp/zxing-cpp.git
+   cd zxing-cpp
+   mkdir build && cd build
+   cmake ..
+   make -j$(nproc)
+   sudo make install
+   sudo ldconfig
+
+3) Projeyi derle:
+
+   cd src
+   mkdir build && cd build
+   cmake ..
+   make
+
+Kontrol:
+
+   pkg-config --modversion opencv4
+   find /usr/local -iname "*zxing*"

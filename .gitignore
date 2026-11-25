@@ -1,0 +1,12 @@
+# Önce her şeyi yasakla
+*
+
+# Sonra sadece istenenlere izin ver
+!src/
+!src/main.cpp
+!src/engine.cpp
+!src/engine.h
+!src/CMakeLists.txt
+!KURULUM.txt
+!KURULUM.md
+!.gitignore
